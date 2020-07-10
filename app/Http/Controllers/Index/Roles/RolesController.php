@@ -28,7 +28,7 @@ class RolesController extends AuthController
         try {
             $user = auth('api')->user();
 //            var_dump($user);exit();
-            $user = User::where('id',$user->id)->first();
+            $user = User::where('id', $user->id)->first();
 //            var_dump($user);exit();
             $permissions = $user->getAllPermissions();
             return Response::PcResponse(0, '查询成功', $permissions, 200);
